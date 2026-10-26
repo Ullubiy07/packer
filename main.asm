@@ -5,9 +5,9 @@ section .data
     file_name      db "main_packed", 0
     open_mode      db "rb+", 0
 
-    ksize          dd 512
-    text_addr      dd 0x08049090
-    payload_offset dd 0x0bcf2c
+    key_size       dd 512
+    key_addr       dd 0x08049040  ; .text section address
+    payload_offset dd 0x000cab1c
 
 
 section .text
@@ -52,8 +52,8 @@ _pack:
     push   ebp
     mov    ebp, esp
 
-    push   dword [ksize]
-    push   dword [text_addr]
+    push   dword [key_size]
+    push   dword [key_addr]
     push   esi
     push   payload_start
     call   _xor
@@ -68,8 +68,8 @@ _unpack:
     push   ebp
     mov    ebp, esp
 
-    push   dword [ksize]
-    push   dword [text_addr]
+    push   dword [key_size]
+    push   dword [key_addr]
     push   esi
     push   payload_start
     call   _xor
@@ -253,4 +253,3 @@ fib_done:
     pop    ebp
     ret
 payload_end:
-    
