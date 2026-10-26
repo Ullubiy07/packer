@@ -31,3 +31,7 @@ cp build/main/main ./main_packed
 ```bash
 ./main_packed
 ```
+## Демонстрация работы
+Дамп памяти секции .payload до и после упаковки
+
+![Сравнение дампов до и после шифрования](./docs/example.png)
