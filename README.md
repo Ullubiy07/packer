@@ -22,12 +22,12 @@ make all
 cp build/main/main ./main_packed
 ```
 ### 3. Упаковка
-Шифрование секции .payload в main_packed
+Шифрование секции .payload в памяти и последующая запись на диск в main_packed
 ```bash
 ./build/main/main pack
 ```
-### 4. Запуск и распаковка
-Дешифровка .payload на лету и вызов функций factor и fibb из нее
+### 4. Распаковка и запуск
+Дешифровка .payload на лету в памяти и вызов функций factor и fibb из нее
 ```bash
 ./main_packed
 ```
