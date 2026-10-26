@@ -6,8 +6,8 @@ section .data
     open_mode      db "rb+", 0
 
     key_size       dd 512
-    key_addr       dd 0x08049040  ; .text section address
-    payload_offset dd 0x000cab1c
+    key_addr       dd 0x08049040  ; @KEY_ADDR@
+    payload_offset dd 0x000cab1c  ; @PAYLOAD_OFFSET@
 
 
 section .text
