@@ -29,7 +29,7 @@ ${P_DIR}:
 # main
 ${BIN}: ${P_DIR}/macro.o ${BIN}.o | ${T_DIR} ${P_DIR}
 	@echo -e "  ${CLR_LINK}LINK${CLR_RESET}    $@"
-	gcc -static -g $^ -o $@ -m32 -no-pie -Wl,--no-warn-execstack,--no-warn-rwx-segments
+	gcc -static -g $^ -o $@ -m32 -no-pie -Wl,--no-warn-execstack,--no-warn-rwx-segments,-z,norelro
 
 # main.o
 ${BIN}.o: ${TARGET}.asm | ${T_DIR} ${P_DIR}
