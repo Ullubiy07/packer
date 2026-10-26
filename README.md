@@ -14,6 +14,8 @@
 ### 1. Сборка проекта
 ```bash
 make all
+chmod +x patch.sh && ./patch.sh
+make all
 ```
 ### 2. Подготовка упакованного файла
 ```bash
